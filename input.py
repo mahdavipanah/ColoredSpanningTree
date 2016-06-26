@@ -1,4 +1,5 @@
 from os import linesep
+import re
 
 # Saves a adjacency matrix to a file
 def graph_to_file(W, filename):
@@ -17,11 +18,22 @@ def graph_to_file(W, filename):
 
 # Reads a adjacency matrix from a file
 def file_to_graph(filename):
+    # Convert list of strings to list of integers
+    def strListToint(ls):
+        return [int(i) for i in ls]
+    pattern = re.compile(r'\s+')
     try:
         with open(filename) as input_file:
-            lines = input_file.readlines()
-            lines = [line.rstrip(linesep) for line in lines]
-            W = [line.split(' ') for line in lines]
+            lines = []
+            for line in input_file:
+                # Check if line is empty
+                if re.sub(pattern, '', line) == '':
+                    # Stop reading from input file
+                    break
+                else:
+                    # Add line to inputed lines
+                    lines.append(line.rstrip(linesep))
+            W = [strListToint(line.split(' ')) for line in lines]
     except:
         raise
     return W
