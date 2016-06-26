@@ -3,6 +3,11 @@ import sys
 import os.path
 import input
 
+# Check if user wants the result spanning tree to be colored
+colored = False
+choose = raw_input("Is the spanning tree colored?(yes/no): ").lower()
+if choose == "yes" or choose == "y":
+    colored = True
 # Adjacency matrix
 W = []
 # Check if user wants a random graph
