@@ -54,7 +54,7 @@ distance = [W[0][i] for i in range(1, len(W))]
 F = []
 
 for k in range(1, len(W)):
-    min = 10
+    min = 3
     vnear = 0
 
     for i in range(1, len(W)):
@@ -62,11 +62,21 @@ for k in range(1, len(W)):
             min = distance[i - 1]
             vnear = i
 
+    if min ==  3:
+        sys.exit('There is no spanning tree for this graph.')
+
     F.append([vnear, nearest[vnear - 1]])
     distance[vnear - 1] = -1
 
     for i in range(1, len(W)):
         if W[i][vnear] < distance[i - 1]:
+            # Check if the tree should be colored
+            if colored:
+                # Check if any neighbor edge has the same color
+                if any((vnear == e[0] or vnear == e[1])
+                       and W[e[0]][e[1]] == W[i][vnear]
+                       for e in F):
+                    continue
             distance[i - 1] = W[i][vnear]
             nearest[i - 1] = vnear
 
