@@ -1,4 +1,6 @@
 from asciitree import LeftAligned
+# asciitree package Repository:     https://github.com/mbr/asciitree
+# asciitree package documentation:  http://pythonhosted.org/asciitree/
 from collections import OrderedDict as OD
 
 # Return a child nodes of a tree with specific root and edges recursively
