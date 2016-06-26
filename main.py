@@ -13,11 +13,7 @@ if choose == "yes" or choose == "y":
     except ValueError:
         sys.exit("Invalid number entered!")
     # Initial all W contents to -1
-    for i in range(0, vcount):
-        row = []
-        for j in range(0, vcount):
-            row.append(-1)
-        W.append(row)
+    W = [[-1 for i in range(0, vcount)] for j in range(0, vcount)]
     # Generate random graph
     print("Generating random graph...")
     for i in range(0, vcount):
