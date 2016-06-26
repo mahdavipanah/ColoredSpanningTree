@@ -2,6 +2,7 @@ from random import randint
 import sys
 import os.path
 import input
+import tree
 
 # Check if user wants the result spanning tree to be colored
 colored = False
@@ -90,4 +91,18 @@ for k in range(1, len(W)):
             distance[i - 1] = W[i][vnear]
             nearest[i - 1] = vnear
 
-print(F)
+# Number of 2 weighted edges
+edges2 = 0
+# Number of 1 weighted edges
+edges1 = 0
+# Count 1 and 2 weighted edges
+for e in F:
+    if W[e[0]][e[1]] == 1:
+        edges1 += 1
+    else:
+        edges2 += 1
+
+print("\nNumber of 1 weighted edges: " + str(edges1))
+print(  "Number of 2 weighted edges: " + str(edges2))
+
+tree.draw(0, F)
