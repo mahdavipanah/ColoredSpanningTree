@@ -44,7 +44,17 @@ else :
         W = input.file_to_graph('input.txt')
     except:
         sys.exit("Error happend in opening or reading from input file.")
-    # Check if all elements
+    # Check W to be valid
+    for i in range(0, len(W)):
+        for j in range(i, len(W)):
+            try:
+                if W[i][j] != W[j][i]:
+                    raise
+                if not 0 <= W[i][j] <= 3:
+                    raise
+            except:
+                sys.exit("Inputed adjacency matrix is not valid. See README.md.")
+
 
 # Use prim algorithm
 
