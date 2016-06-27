@@ -63,7 +63,7 @@ Same as first section.
 # Prerequisites
 * Python2 *(python 2.7 is prefered)*
 * [asciitree python package](https://github.com/mbr/asciitree):
-```shell
+```
 pip2 install asciitree
 ```
 
