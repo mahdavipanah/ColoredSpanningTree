@@ -105,4 +105,6 @@ for e in F:
 print("\nNumber of 1 weighted edges: " + str(edges1))
 print(  "Number of 2 weighted edges: " + str(edges2))
 
-tree.draw(0, F)
+    print("Tree's total weight: " + str(edgesWeights[1] + edgesWeights[2] * 2))
+
+    tree.draw(0, F)
