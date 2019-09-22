@@ -1,4 +1,4 @@
-# Problem describtion
+# Problem description
 ## Multicolored Spanning Trees (Compulsory)
 Suppose that you have a connected, undirected graph G = (V, E) where each edge is colored either red or blue.
 Given a number k, you are interested in determining whether there is some spanning tree of G that contains
